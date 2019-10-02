@@ -9,6 +9,7 @@ if pin != userPin:
 # Saldo
 saldo = 0.0
 
+
 # Menu
 menu = 0
 
@@ -32,9 +33,21 @@ while menu != 3:
             print("Saik! due fattig")
     elif menu == 3:
         print("loggar ut")
-        exit()
+        break
     elif menu == 4:
         print(saldo)
 
     else:
         print("Fel/avsluta")
+
+# skapa en text fil som sparar saldo
+
+file = open("money.txt", 'r+')
+money = file.read()
+file.write(str(saldo))
+print(money)
+file.close()
+
+#f = open("money.txt", 'a')
+#f.write(str(saldo))
+#f.close()

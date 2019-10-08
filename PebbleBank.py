@@ -9,6 +9,11 @@ if pin != userPin:
 # Saldo
 saldo = 0.0 # En variabel som visar start saldot
 
+# skapa en text fil som sparar saldo
+
+file = open("money.txt", 'r')
+money = file.readline()
+file.close()
 
 # Menu
 menu = 0 # En variabel
@@ -25,6 +30,11 @@ while menu != 3: # Detta gör så att sålänge man inte skriver 3 så loopar pr
         insättning = float(input("Hur mycket vill du lägga in?: ")) # Detta har en float som är för heltal+decimaler och så ska man skriva in de tal man vill lägga in.
         saldo = saldo + insättning # En variabel som är saldot + de insättning man lägger till.
         print(saldo) # printar saldot.
+
+        open("file", "w")
+        file.write(str(saldo))
+        file.close()
+        
     elif menu == 2: # Detta variabel har en elif som är "else/if" och då går programmet till menu 2
         uttag = float(input("Hur mycket vill du ta ut? ")) # Detta variabel uttag gör så att du ska skriva hur mycket du vill ta ut.
         saldo = saldo - uttag # En variabel som visar saldo - uttaget man gör
@@ -37,17 +47,10 @@ while menu != 3: # Detta gör så att sålänge man inte skriver 3 så loopar pr
     elif menu == 4: # Det printar ut de saldot du har på kontot
         print(saldo) # printar saldot.
 
-    else: # Detta gör så om man inte väljer något
-        print("Fel/avsluta")
-        break
+    else: # Detta gör så om man inte väljer något av de menyvalerna så händer detta.
+        print("Fel/avsluta") # printar ut om man skriver in fel meny
+        break # breakar loopen
 
-# skapa en text fil som sparar saldo
-
-file = open("money.txt", 'r+')
-money = file.read()
-file.write(str(saldo))
-print(money)
-file.close()
 
 #f = open("money.txt", 'a')
 #f.write(str(saldo))

@@ -1,6 +1,7 @@
 # Start
 print("Välkommen till Pebbles Bank") # Printar ut början av programmet
 # Login Details
+print("pinkoden = 1221") # printar pinkoden så du inte glömmer
 pin = 1221 # En vaiabel som är pinkodet til programmet.
 userPin = int(input("Skriv in din pinkod: ")) # Det här variabeln gör så man måste skriva in pin och om det är fel så stängs programmet av.
 if pin != userPin: # detta gör så om man skriver fel pinkod så stängs programmet av.
@@ -9,7 +10,7 @@ if pin != userPin: # detta gör så om man skriver fel pinkod så stängs progra
 # Saldo
 saldo = 0.0 # En variabel som visar start saldot
 
-print("Här är ditt hela saldo")
+print("Detta kan vara ditt hela saldo")
 # sparar saldo till fil
 file = open("money.txt", 'r+')
 money = file.read()

@@ -10,13 +10,13 @@ if pin != userPin: # detta gör så om man skriver fel pinkod så stängs progra
 # Saldo
 saldo = 0.0 # En variabel som visar start saldot
 
-print("Detta kan vara ditt hela saldo")
+print("Detta KAN vara ditt hela saldo eller inte")
 # sparar saldo till fil
-file = open("money.txt", 'r+')
-money = file.read()
-file.close()
-file = open("money.txt", "w")
-print(money)
+file = open("money.txt", 'r+') # öppnar din txt fil och om det inte finns så skapar det än
+money = file.read() # läser filen
+file.close() # stänger ner fil
+file = open("money.txt", "w") # öppnar filen och gör så man kan skriva in i det.
+print(money) # skriver ut money
 # Menu
 menu = 0 # En variabel
 
@@ -31,6 +31,7 @@ while menu == 0:
         insättning = float(input("Hur mycket vill du sätta in? ")) # Insättningen är en float, vilket gör att du kan skriva decimaltal
         saldo = saldo + insättning # plusar ihop ditt saldo med insättning
         print(saldo) # Skriver ut ditt saldo
+        
         menu = 0 # går tillbaka så du kan välja meny
 
     elif menu == 2: # Uttag
@@ -48,8 +49,8 @@ while menu == 0:
         menu = 0 # går tillbaka till menyn
 
     elif menu == 4: # Stänger av
-        print("Hejdå, vi synes nästa gång du är på snabbare")
-        file.write(str(saldo))
+        print("Hejdå, vi synes nästa gång du ska på snabbare.com")
+        file.write(str(saldo)) # Det skriver in ditt saldo i filen
         exit() # stänger av programet
 
     else:
